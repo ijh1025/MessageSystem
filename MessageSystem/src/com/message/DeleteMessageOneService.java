@@ -9,14 +9,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.frontcontroller.IController;
+
 
 
 /**
  * Servlet implementation class DeleteMessageOneService
  */
-@WebServlet("/DeleteMessageOneService")
-public class DeleteMessageOneService extends HttpServlet {
- 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+public class DeleteMessageOneService implements IController{
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String num=request.getParameter("num");
 		MessageDAO dao=new MessageDAO();
 		int result=dao.deleteOne(num);

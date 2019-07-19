@@ -8,12 +8,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.frontcontroller.IController;
+
 /**
  * Servlet implementation class LoginService
  */
-@WebServlet("/LoginService")
-public class LoginService extends HttpServlet {
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+public class LoginService implements IController{
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("EUC-KR");
 		
 		String email = request.getParameter("email");
@@ -22,7 +24,7 @@ public class LoginService extends HttpServlet {
 		MemberDTO dto=new MemberDTO(email, pw);
 		MemberDAO dao= MemberDAO.getDAO();
 		dto=dao.login(dto);
-		dto.toString();
+		//dto.toString();
 		
 		if (dto!=null) {
 			HttpSession session= request.getSession();

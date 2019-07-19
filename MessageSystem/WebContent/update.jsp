@@ -25,7 +25,7 @@
 					<nav id="Update">	
 						<ul class="actions vertical">
 							<li><h5>회원정보수정</h5></li>
-								<form action="Update" method="post">
+								<form action="Update.do" method="post">
 									<li>접속한 Email : <%=info.getEmail() %></li>
 									<li><input type="password" placeholder="PW를 입력하세요" style="width: 500px; margin: 0 auto;" name="pw"></li>
 									<li><input type="text" placeholder="전화번호를 입력하세요" style="width: 500px; margin: 0 auto;" name="tel"></li>

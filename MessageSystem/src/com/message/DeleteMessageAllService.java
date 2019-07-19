@@ -7,12 +7,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.frontcontroller.IController;
+
 /**
  * Servlet implementation class DeleteMessageAllService
  */
-@WebServlet("/DeleteMessageAllService")
-public class DeleteMessageAllService extends HttpServlet {
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+public class DeleteMessageAllService implements IController{
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String email=request.getParameter("email");
 		
 		MessageDAO dao=new MessageDAO();

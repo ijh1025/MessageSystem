@@ -8,12 +8,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.frontcontroller.IController;
+
 /**
  * Servlet implementation class LogoutService
  */
-@WebServlet("/LogoutService")
-public class LogoutService extends HttpServlet {
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+public class LogoutService implements IController{
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();
 		session.removeAttribute("info");
 		response.sendRedirect("main.jsp");

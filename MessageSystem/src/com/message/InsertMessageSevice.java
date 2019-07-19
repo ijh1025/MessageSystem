@@ -16,15 +16,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.frontcontroller.IController;
 import com.member.MemberDTO;
 
 /**
  * Servlet implementation class InsertMessageSevice
  */
-@WebServlet("/InsertMessageSevice")
-public class InsertMessageSevice extends HttpServlet {
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public class InsertMessageSevice implements IController{
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("EUC-KR");
 		
 		String send_name=request.getParameter("send_name");

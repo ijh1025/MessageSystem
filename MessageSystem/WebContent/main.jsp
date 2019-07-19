@@ -26,7 +26,7 @@
 						<a href="index.html" class="logo"><strong>Forty</strong> <span>by HTML5 UP</span></a>
 
 						<nav>
-							<%if(info==null){ %>	<a href="#menu">로그인</a><%}else{ %><%if(info.getAdmin()==1){ %><a href="List">회원정보확인</a><%} %><a href="update.jsp">개인정보수정</a><a href="LogoutService">로그아웃</a><% } %>
+							<%if(info==null){ %>	<a href="#menu">로그인</a><%}else{ %><%if(info.getAdmin()==1){ %><a href="List.do">회원정보확인</a><%} %><a href="update.jsp">개인정보수정</a><a href="LogoutService.do">로그아웃</a><% } %>
 							<!-- 로그인 후 Logout.jsp로 이동할 수 있는'로그아웃'링크와 '개인정보수정'링크를 출력하시오. -->
 						</nav>
 					</header>
@@ -35,7 +35,7 @@
 					<nav id="menu">	
 						<ul class="links">
 							<li><h5>로그인</h5></li>
-								<form action="LoginService" method="post">
+								<form action="LoginService.do" method="post">
 									<li><input type="text"  placeholder="Email을 입력하세요" name="email"></li>
 									<li><input type="password"  placeholder="PW를 입력하세요" name="pw"></li>
 									<li><input type="submit" value="LogIn" class="button fit"></li>
@@ -155,12 +155,12 @@
 											<li><%=i+1 %>,<%=list.get(i).getSend_name() %>
 											 : <%=list.get(i).getContent() %>
 											 - <%=list.get(i).getDay() %>
-											 <a href="DeleteMessageOneService?num=<%=list.get(i).getNum() %>" class="button next scrolly">전체삭제하기</a>
+											 <a href="DeleteMessageOneService.do?num=<%=list.get(i).getNum() %>" class="button next scrolly">전체삭제하기</a>
 											</li>
 											<br>
 											
 											<% }%>
-										<li><a href="DeleteMessageAllService?email=<%=info.getEmail() %>" class="button next scrolly">전체삭제하기</a></li>
+										<li><a href="DeleteMessageAllService.do?email=<%=info.getEmail() %>.do" class="button next scrolly">전체삭제하기</a></li>
 										<%} %>
 									</ul>
 								</div>
@@ -173,7 +173,7 @@
 					<section id="contact">
 						<div class="inner">
 							<section>
-								<form action="InsertMessageSevice" method="post">
+								<form action="InsertMessageSevice.do" method="post">
 								<div class="field half first">
 										<label for="name">Name</label>
 										<input type="text" name="send_name" id="name" placeholder="보내는 사람 이름" />

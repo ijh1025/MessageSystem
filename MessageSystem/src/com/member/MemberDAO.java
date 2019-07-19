@@ -82,7 +82,7 @@ public class MemberDAO {
 			getConnection();
 			try {
 
-				String sql = "insert into web_member values(?,?,?,?)";
+				String sql = "insert into web_member values(?,?,?,?,2)";
 				psmt = conn.prepareStatement(sql);
 				psmt.setString(1, dto.getEmail());
 				psmt.setString(2, dto.getPw());
